@@ -16,8 +16,8 @@ public RouterFunction<ServerResponse> routerFunction(Handler handler) {
     return route(POST("/api/usecase/crearheroe"), handler::createHeroUseCase)// Listo
             .and(route(GET("/api/usecase"), handler::listAllUseCase)) // Listo
             .and(route(GET("/api/usecase/{id}"), handler::listForIdUseCase)) // Listo
-            .and(route(PUT("/api/usecase/{id}"), handler::updateForHero))
-            .and(route(DELETE("/api/usecase/{id}"), handler::deleteHero));
+            .and(route(PUT("/api/usecase/{id}"), handler::updateForHero))// Listo
+            .and(route(DELETE("/api/usecase/{id}"), handler::deleteHero)); // Listo
 
     }
 }

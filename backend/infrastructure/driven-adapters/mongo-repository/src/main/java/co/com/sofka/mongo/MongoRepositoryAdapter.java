@@ -5,6 +5,7 @@ import co.com.sofka.model.hero.gateways.HeroRepository;
 import co.com.sofka.mongo.helper.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
@@ -35,5 +36,11 @@ public class MongoRepositoryAdapter extends AdapterOperations<Hero, HeroDocument
                 .flatMap(element -> Mono.just(hero));
     }
 
-
+//    @Override
+//    public Flux<Hero> findByName(String name) {
+//        return repository
+//                .findAll()
+//                .filter(filtro ->filtro.getName().contains(name))
+//                .map(filtro-> filtro.getName());
+//    }
 }
